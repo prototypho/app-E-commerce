@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+body {
+  /* Ejemplo con un patrón oscuro sutil para no perder legibilidad */
+  background-image: url('./assets/img/background.png'); 
+  
+  /* Asegura que la imagen cubra todo el fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Fija la imagen para que no se mueva al hacer scroll (opcional) */
+  background-attachment: fixed;
+  
+  /* Mantiene el color de fondo por si la imagen tarda en cargar */
+  background-color: #111827; /* gray-900 */
+}
+
+.logo_head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo_head img {
+  width: 150px;
+}
+
