@@ -16,7 +16,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         <h1 className="text-3xl font-bold bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-transparent mb-2">
-          Bienbenid@ !
+          Bienvenid@ !
         </h1>
         <p className="text-gray-400 mb-8">
           Tus productos favoritos, a un click de distancia.
