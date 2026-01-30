@@ -159,9 +159,34 @@ const ProfilePage: React.FC = () => {
                 </span>
               </div>
               <p className="text-white font-bold text-lg mb-1">{formatCurrency(order.total)}</p>
-              <p className="text-sm text-gray-400">
-                 {new Date(order.created_at || '').toLocaleDateString()}
-              </p>
+              <div className="flex justify-between items-end">
+                <p className="text-sm text-gray-400">
+                   {new Date(order.created_at || '').toLocaleDateString()}
+                </p>
+                
+                {order.status === 'pending' && (
+                  <button
+                    onClick={async () => {
+                      if (!confirm('¿Estás seguro de que deseas cancelar este pedido?')) return;
+                      
+                      const { error } = await supabase
+                        .from('orders')
+                        .update({ status: 'cancelled' })
+                        .eq('id', order.id);
+
+                      if (error) {
+                        alert('Error al cancelar el pedido');
+                      } else {
+                        // Optimistic update
+                        setOrders(orders.map(o => o.id === order.id ? { ...o, status: 'cancelled' } : o));
+                      }
+                    }}
+                    className="text-xs bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/50 px-3 py-1 rounded-lg transition-colors"
+                  >
+                    Cancelar Pedido
+                  </button>
+                )}
+              </div>
             </div>
           ))}
         </div>
