@@ -74,14 +74,17 @@ const HomePage: React.FC = () => {
         <div className="grid grid-cols-2 gap-4">
           {filteredProducts.map(product => (
             <div key={product.id} className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-yellow-500/50 transition-colors shadow-lg">
-              <Link to={`/product/${product.id}`} className="block relative aspect-square bg-gray-700">
-                 {/* Placeholder for no image, or real image */}
-                 <img
-                   src={product.image_url || ''}
-                   alt={product.name}
-                   className="w-50 h-50 object-cover"
-                   loading="lazy"
-                 />
+              <Link to={`/product/${product.id}`} className="block relative aspect-square bg-gray-700 flex items-center justify-center">
+                {product.image_url ? (
+                  <img
+                    src={product.image_url}
+                    alt={product.name}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <Plus size={40} className="text-gray-600 rotate-45" /> // Un icono de placeholder
+                )}
               </Link>
               <div className="p-3">
                 <Link to={`/product/${product.id}`}>
