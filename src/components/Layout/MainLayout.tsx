@@ -14,7 +14,7 @@ const MainLayout: React.FC = () => {
       {/* Header / Top Bar (Optional, simpler to keep clean for mobile) */}
       <header className="top-0 w-full bg-transparent z-40 p-3">
         <div className="logo_head">
-          <img src="src/assets/img/Logo_Solares.png" alt="Logo" />
+          <img src="https://pvjvfshkfhqdssxnczkm.supabase.co/storage/v1/object/public/branding/logos/Logo_Solares.png" alt="Logo" />
         </div>
       </header>
 
