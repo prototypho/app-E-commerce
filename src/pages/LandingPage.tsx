@@ -4,7 +4,7 @@ import { ShoppingBag, ArrowRight } from 'lucide-react';
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+    <div className="min-h-screen bg-red-900 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
       
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-yellow-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -12,16 +12,14 @@ const LandingPage: React.FC = () => {
 
       <div className="z-10 bg-gray-800/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-700 shadow-2xl max-w-sm w-full">
         <div className="flex justify-center mb-6">
-          <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg rotate-3">
-            <ShoppingBag size={40} className="text-white" />
-          </div>
+          <img src="https://pvjvfshkfhqdssxnczkm.supabase.co/storage/v1/object/public/branding/logos/Logo_Solares.png" alt="Logo" />
         </div>
 
         <h1 className="text-3xl font-bold bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-transparent mb-2">
-          Solares Maxi Kiosco
+          Bienbenid@ !
         </h1>
         <p className="text-gray-400 mb-8">
-          Tus antojos favoritos, a un click de distancia.
+          Tus productos favoritos, a un click de distancia.
         </p>
 
         <div className="space-y-4">
